@@ -18,11 +18,8 @@ def es_seguro(tablero, fila, columna, N):
 
 
 def resolver_n_reinas(tablero, fila, N):
-    """
-    Usa backtracking para resolver el problema N-Queens desde una fila específica.
-    """
     if fila >= N:
-        return True  # Todas las reinas han sido colocadas correctamente
+        return True  
 
     for columna in range(N):
         if es_seguro(tablero, fila, columna, N):
@@ -40,9 +37,6 @@ def resolver_n_reinas(tablero, fila, N):
 
 
 def mostrar_tablero(tablero, N):
-    """
-    Muestra el tablero resultante con ceros y unos.
-    """
     for fila in tablero:
         print("{", "  ".join(map(str, fila)), "}")
 
@@ -56,7 +50,6 @@ def main():
         print("Solo se permiten tamaños de tablero 4 o 8. Por favor, intente de nuevo.")
         return
 
-    # Crear un tablero NxN inicializado con ceros
     tablero = [[0 for _ in range(N)] for _ in range(N)]
 
     # Resolver el problema
